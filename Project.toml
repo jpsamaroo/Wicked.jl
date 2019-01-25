@@ -1,0 +1,6 @@
+name = "Wicked"
+uuid = "fbfe6d93-aa95-4a38-a5f6-4229975dad61"
+version = "0.0.1"
+
+[deps]
+VT100 = "7774df62-37c0-5c21-b34d-f6d7f98f54bc"
