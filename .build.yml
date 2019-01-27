@@ -1,0 +1,16 @@
+image: archlinux
+
+packages:
+  - wget
+sources:
+  - https://github.com/jpsamaroo/Wicked.jl
+tasks:
+  - get-julia: |
+      wget --quiet https://julialangnightlies-s3.julialang.org/bin/linux/x64/julia-latest-linux64.tar.gz
+      tar xvf julia-latest-linux64.tar.gz 2>&1 >/dev/null
+      mkdir -p $HOME/bin
+      ln -s $HOME/julia-*/bin/julia $HOME/bin/julia
+  - test: |
+      export PATH=$HOME/bin:$PATH
+      cd Wicked.jl
+      julia --project -e "using Pkg; Pkg.test()"
